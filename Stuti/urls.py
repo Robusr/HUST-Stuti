@@ -19,9 +19,12 @@ Including another URLconf
 Robusr 2026.1.29
 项目总路由配置文件
 """
-from django.contrib import admin
-from django.urls import path
 
+import stuti_app
+from django.contrib import admin
+from django.urls import path, re_path, include
+from stuti_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path('Stuti',include('Stuti.urls'), name='Stuti') #添加总路由
 ]
