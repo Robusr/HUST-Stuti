@@ -2,6 +2,8 @@
 Robusr 2026.1.30
 全局基本设置
 """
+import os.path
+
 # from stuti_app import books, comment, order, user, wants
 
 """
@@ -47,8 +49,13 @@ INSTALLED_APPS = [
     # "stuti_app.order",
     # "stuti_app.wants",
     # "stuti_app.user",
-
 ]
+
+#配置跨域插件
+#允许所有域名跨域
+CORS_ORIGIN_ALLOW_ALL = True
+#允许携带cookie
+CorS_ALLOW_CREDENTIALS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -137,19 +144,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
-
+# 配置静态资源文件
 STATIC_URL = 'static/'
 
-"""CORS组配置信息"""
-# CORS_ORIGIN_WHITELIST = (
-#     'http://localhost:8080',
-#     'http://127.0.0.1:8080',
-#     #如果这样写无法访问，就加上协议
-#     #（http://www.localhost:8080因为不同的corsheader版本可能有不同的需求）
-# )
-CORS_ORIGIN_ALLOW_ALL = True
-#是否允许ajax跨域请求时携带cookie，False表示不用，后面用不到cookie，所以关掉，避免cookie攻击
-#请求方法
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
+
 CORS_ALLOWS_METHODS = (
     'DELETE',
     'GET',

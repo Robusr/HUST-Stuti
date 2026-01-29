@@ -28,5 +28,5 @@ urlpatterns = [
     #path('Stuti',include('Stuti.urls'), name='Stuti') #添加总路由
 
     #主菜单请求路由
-    path("main_menu", WantsMainView.as_view())
+    path("main_menu/", WantsMainView.as_view())
 ]
