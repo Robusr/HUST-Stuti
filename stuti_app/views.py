@@ -1,3 +1,7 @@
-from django.shortcuts import render
+"""
+Robusr 2026.1.29
+视图逻辑文件
+Robusr 2026.1.30
+完全重构
+"""
 
-# Create your views here.
