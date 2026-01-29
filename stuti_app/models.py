@@ -6,13 +6,24 @@ Robusr 2026.1.30
 """
 from django.db import models
 
-#用户收藏表
-class Wants(models.Model):
-    """用户收藏数据表"""
-    id = models.AutoField(primary_key=True, null=False, unique=True)
-    sku_id  = models.CharField(null=False, max_length=255, unique=True)
-    nums = models.IntegerField()
-    is_delete = models.IntegerField()
+class MainMenu(models.Model):
+    """书籍类别总菜单"""
+    main_menu_id = models.IntegerField()
+    main_menu_name = models.CharField(max_length=255)
+    main_menu_url = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
-        db_table = 'wants'
+        managed = False
+        db_table = 'main_menu'
+
+class SubMenu(models.Model):
+    """书籍类别二级菜单"""
+    main_menu_id = models.IntegerField(blank=True, null=True)
+    sub_menu_id = models.IntegerField(blank=True, null=True)
+    sub_menu_type = models.CharField(max_length=255, blank=True, null=True)
+    sub_menu_name = models.CharField(max_length=255, blank=True, null=True)
+    sub_menu_url = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'sub_menu'

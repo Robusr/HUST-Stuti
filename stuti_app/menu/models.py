@@ -21,6 +21,7 @@ class SubMenu(models.Model):
     sub_menu_type = models.CharField(max_length=255, blank=True, null=True)
     sub_menu_name = models.CharField(max_length=255, blank=True, null=True)
     sub_menu_url = models.CharField(max_length=255, blank=True, null=True)
+
     class Meta:
         managed = False
         db_table = 'sub_menu'
