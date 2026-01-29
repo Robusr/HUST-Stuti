@@ -22,11 +22,12 @@ Robusr 2026.1.29
 
 from django.contrib import admin
 from django.urls import path, re_path, include
-from stuti_app.menu.views import WantsMainView
+from stuti_app.menu.views import BooksMainMenuView, BooksSubMenuView
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('Stuti',include('Stuti.urls'), name='Stuti') #添加总路由
 
     #主菜单请求路由
-    path("main_menu/", WantsMainView.as_view())
+    path("main_menu/", BooksMainMenuView.as_view()),
+    path("sub_menu/", BooksSubMenuView.as_view())
 ]
