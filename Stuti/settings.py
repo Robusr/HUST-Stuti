@@ -4,7 +4,7 @@ Robusr 2026.1.30
 """
 import os.path
 
-# from stuti_app import books, comment, order, user, wants
+from stuti_app import books, comment, order, user, wants, menu
 
 """
 Robusr 2026.1.29
@@ -43,12 +43,12 @@ INSTALLED_APPS = [
     'corsheaders',#配置跨域
     'rest_framework',#DRF组件
 
-    # #自定义应用组件
-    # "stuti_app.books",
-    # "stuti_app.comment",
-    # "stuti_app.order",
-    # "stuti_app.wants",
-    # "stuti_app.user",
+    #自定义应用组件
+    "stuti_app.books",
+    "stuti_app.comment",
+    "stuti_app.order",
+    "stuti_app.wants",
+    "stuti_app.user"
 ]
 
 #配置跨域插件
