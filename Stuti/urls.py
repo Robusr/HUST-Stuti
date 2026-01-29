@@ -20,11 +20,13 @@ Robusr 2026.1.29
 项目总路由配置文件
 """
 
-import stuti_app
 from django.contrib import admin
 from django.urls import path, re_path, include
-from stuti_app import views
+from stuti_app.menu.views import WantsMainView
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('Stuti',include('Stuti.urls'), name='Stuti') #添加总路由
+
+    #主菜单请求路由
+    path("main_menu", WantsMainView.as_view())
 ]

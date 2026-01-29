@@ -165,8 +165,8 @@ CORS_ALLOWS_HEADERS = (
 )
 
 """媒体上传文件配置"""
-#指定文件获取的url路径
-MEDIA_URL = '/upimg/'
-
-#文件上传的保存路径
-MEDIA_ROOT = BASE_DIR / 'upimg'
+# #指定文件获取的url路径
+# MEDIA_URL = '/upimg/'
+#
+# #文件上传的保存路径
+# MEDIA_ROOT = BASE_DIR / 'upimg'

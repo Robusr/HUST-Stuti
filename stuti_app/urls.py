@@ -9,6 +9,5 @@ from . import views
 urlpatterns = [
     #path('/',)
 
-    #登录接口
-    path('login/', views.LoginView.as_view(), name='login')
+
 ]
