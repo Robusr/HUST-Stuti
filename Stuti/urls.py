@@ -22,7 +22,7 @@ Robusr 2026.1.29
 """
 
 from django.contrib import admin
-from django.urls import path, re_path, include
+from django.urls import path,  include
 from stuti_app.menu.views import BooksMainMenuView, BooksSubMenuView
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +31,5 @@ urlpatterns = [
     #主菜单请求路由
     path("main_menu/", BooksMainMenuView.as_view()),
     path("sub_menu/", BooksSubMenuView.as_view()),
-    path('books/',include("stuti_app.books.urls")),
+    path("books/",include("stuti_app.books.urls")),
 ]

@@ -9,6 +9,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 import utils.ResponseMessage as ResponseMessage
 from stuti_app.books.models import Books
+from stuti_app.books.serializers import BooksSerializer
 
 
 class BooksCategoryAPIView(APIView):
@@ -26,4 +27,18 @@ class BooksCategoryAPIView(APIView):
 
         return ResponseMessage.BooksResponse.success(result_list)
 
+class BooksDetailAPIView(APIView):
+    """基于APIView的书籍详情视图方法"""
+    def get(self, request, sku_id):
+        # print(sku_id)
+        books_data = Books.objects.filter(
+            sku_id=sku_id
+        ).first()
+
+        #序列化操作
+        #序列化参数为instance
+        #反序列化的参数为data
+        result = BooksSerializer(instance=books_data)
+
+        return ResponseMessage.BooksResponse.success(result.data)
 

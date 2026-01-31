@@ -11,8 +11,14 @@ from django.db.models.expressions import result
 class MainMenu(models.Model):
     """书籍类别总菜单"""
     main_menu_id = models.IntegerField()
-    main_menu_name = models.CharField(max_length=255)
-    main_menu_url = models.CharField(max_length=255, blank=True, null=True)
+    main_menu_name = models.CharField(
+        max_length=255,
+    )
+    main_menu_url = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
 
     #自定义序列化
     def __str__(self):
@@ -30,11 +36,29 @@ class MainMenu(models.Model):
 
 class SubMenu(models.Model):
     """书籍类别二级菜单"""
-    main_menu_id = models.IntegerField(blank=True, null=True)
-    sub_menu_id = models.IntegerField(blank=True, null=True)
-    sub_menu_type = models.CharField(max_length=255, blank=True, null=True)
-    sub_menu_name = models.CharField(max_length=255, blank=True, null=True)
-    sub_menu_url = models.CharField(max_length=255, blank=True, null=True)
+    main_menu_id = models.IntegerField(
+        blank=True,
+        null=True
+    )
+    sub_menu_id = models.IntegerField(
+        blank=True,
+        null=True
+    )
+    sub_menu_type = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True
+    )
+    sub_menu_name = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True
+    )
+    sub_menu_url = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True
+    )
 
     #自定义序列化
     def __str__(self):

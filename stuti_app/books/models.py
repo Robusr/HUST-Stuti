@@ -84,6 +84,7 @@ class Books(models.Model):
         null=True,
     )
 
+    # 自定义序列化
     def __str__(self):
         result_list = {
             'type_id': self.type_id,
