@@ -165,9 +165,5 @@ CORS_ALLOWS_HEADERS = (
     "* "
 )
 
-"""媒体上传文件配置"""
-# #指定文件获取的url路径
-# MEDIA_URL = '/upimg/'
-#
-# #文件上传的保存路径
-# MEDIA_ROOT = BASE_DIR / 'upimg'
+"""书籍图片静态文件服务器配置"""
+IMAGE_URL="http://localhost:8000/static/product_images/"

@@ -22,7 +22,7 @@ class MainMenu(models.Model):
             "main_menu_url": self.main_menu_url
         }
         return json.dumps(result_list, ensure_ascii=False)
-  
+
 
     class Meta:
         managed = True

@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from stuti_app import books
 
 """
 Robusr 2026.1.29
@@ -29,5 +30,6 @@ urlpatterns = [
 
     #主菜单请求路由
     path("main_menu/", BooksMainMenuView.as_view()),
-    path("sub_menu/", BooksSubMenuView.as_view())
+    path("sub_menu/", BooksSubMenuView.as_view()),
+    path('books/',include("stuti_app.books.urls")),
 ]

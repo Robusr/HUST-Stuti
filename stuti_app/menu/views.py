@@ -7,7 +7,7 @@ import json
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
-from stuti_app.books.models import MainMenu, SubMenu
+from stuti_app.menu.models import MainMenu, SubMenu
 import utils.ResponseMessage as ResponseMessage
 
 
@@ -36,7 +36,7 @@ class BooksMainMenuView(View):
     #     for main_menu_item in main_menu:
     #         item_dict = {
     #             'id': main_menu_item.id,  # 主键ID
-    #             'name': main_menu_item.main_menu_name, 
+    #             'name': main_menu_item.main_menu_name,
     #         }
     #         result_list.append(item_dict)
     #
