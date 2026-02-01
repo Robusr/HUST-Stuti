@@ -17,8 +17,12 @@ class PendingBooksGenericAPIView(GenericAPIView):
     serializer_class = PendingBooksSerializer
 
     def post(self, request):
-        self.get_queryset()
-        self.get_serializer()
+        # trade_no = request.data['trade_no']
+        # self.get_queryset()
+        # self.get_serializer()
+        ser =  self.get_serializer(data=request.data)
+        ser.is_valid()
+        ser.save()
         return JsonResponse(
             "PendingBooksGenericAPIView POST",
             safe=False,
