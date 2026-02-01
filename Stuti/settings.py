@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     "stuti_app.wants",
     "stuti_app.user",
     "stuti_app.menu",
-    "stuti_app.detail"
+    "stuti_app.detail",
+
 ]
 
 #配置跨域插件

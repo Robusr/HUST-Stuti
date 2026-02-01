@@ -4,9 +4,10 @@ Robusr 2026.2.2
 """
 
 from django.urls import path, re_path
-from .views import UserDetailGeneticAPIView
+from .views import UserDetailGeneticAPIView, UserDetailListGeneticAPIView
 
 urlpatterns = [
     path('', UserDetailGeneticAPIView.as_view()),
-    re_path("(?P<pk>.*)", UserDetailGeneticAPIView.as_view()),
+    path("/list", UserDetailListGeneticAPIView.as_view()),
+    re_path("/(?P<pk>.*)", UserDetailGeneticAPIView.as_view()),
 ]
