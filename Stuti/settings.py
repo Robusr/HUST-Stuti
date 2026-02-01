@@ -4,7 +4,7 @@ Robusr 2026.1.30
 """
 import os.path
 
-from stuti_app import books, comment, order, user, wants, menu
+from stuti_app import books, comment, trade, user, wants, menu
 
 """
 Robusr 2026.1.29
