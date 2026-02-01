@@ -117,3 +117,41 @@ class WantsResponse():
             result,
             safe = False
         )
+
+class UserResponse():
+    """
+    用户组件响应工具
+    """
+    # y用户组件响应以4开头
+    @staticmethod
+    def success(data):
+        result = {
+            "status": 4000,
+            "data": data
+        }
+        return JsonResponse(
+            result,
+            safe = False
+        )
+
+    @staticmethod
+    def failed(data):
+        result = {
+            "status": 4001,
+            "data": data
+        }
+        return JsonResponse(
+            result,
+            safe = False
+        )
+
+    @staticmethod
+    def other(data):
+        result = {
+            "status": 4002,
+            "data": data
+        }
+        return JsonResponse(
+            result,
+            safe = False
+        )

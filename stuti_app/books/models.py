@@ -75,6 +75,16 @@ class Books(models.Model):
         blank=True,
         null=True,
     )
+    district_id = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
+    building_num = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+    )
     find = models.IntegerField(
         blank=True,
         null=True,
@@ -118,6 +128,7 @@ class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
         if isinstance(o, decimal.Decimal):
             return float(o)
+
 
 
 
