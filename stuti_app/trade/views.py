@@ -28,6 +28,28 @@ class PendingBooksGenericAPIView(GenericAPIView):
             safe=False,
         )
 
-
+    lookup_field = "trade_no"
+    def get(self, request, trade_no):
+        # # 实现数据库里所有数据的查询
+        # get_data = self.get_serializer(
+        #     instance=self.get_queryset(),
+        #     many=True,
+        # )
+        # return JsonResponse(
+        #     get_data.data,
+        #     safe=False,
+        # )
+        # ser = self.get_serializer(
+        #     instance=self.get_object(),
+        #     many=True,
+        # )
+        ser = self.get_serializer(
+            instance=self.get_object(),
+            many=False,
+        )
+        return JsonResponse(
+            ser.data,
+            safe=False,
+        )
 
 

@@ -14,6 +14,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.contrib.auth.password_validation import password_validators_help_texts
+
 from stuti_app import books
 
 """
@@ -34,5 +36,6 @@ urlpatterns = [
     path("books/",include("stuti_app.books.urls")),
     path("wants/",include("stuti_app.wants.urls")),
     path("user/",include("stuti_app.user.urls")),
-    path('trade/', include('stuti_app.trade.urls'))
+    path("trade/", include('stuti_app.trade.urls')),
+    path("userdetail/",include("stuti_app.detail.urls"))
 ]
