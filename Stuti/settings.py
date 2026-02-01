@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     #自定义应用组件
     "stuti_app.books",
     "stuti_app.comment",
-    "stuti_app.order",
+    "stuti_app.trade",
     "stuti_app.wants",
     "stuti_app.user"
 ]

@@ -34,4 +34,5 @@ urlpatterns = [
     path("books/",include("stuti_app.books.urls")),
     path("wants/",include("stuti_app.wants.urls")),
     path("user/",include("stuti_app.user.urls")),
+    path('trade/', include('stuti_app.trade.urls'))
 ]

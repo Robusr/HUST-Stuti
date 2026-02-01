@@ -15,5 +15,10 @@ class PendingBooksGenericAPIView(GenericAPIView):
     queryset = PendingBooks.objects.all()
     serializer_class = PendingBooksSerializer
 
+    def post(self, request):
+        self.get_queryset()
+        self.get_serializer()
+
+
 
 

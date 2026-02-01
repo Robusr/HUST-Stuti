@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class TradeConfig(AppConfig):
-    name = 'trade'
+    name = 'stuti_app.trade'
