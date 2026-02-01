@@ -32,4 +32,5 @@ urlpatterns = [
     path("main_menu/", BooksMainMenuView.as_view()),
     path("sub_menu/", BooksSubMenuView.as_view()),
     path("books/",include("stuti_app.books.urls")),
+    path("wants/",include("stuti_app.wants.urls")),
 ]
