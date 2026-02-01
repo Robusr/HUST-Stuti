@@ -4,13 +4,14 @@ Robusr 2026.1.30
 """
 import json
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 
 class MenuResponse():
      """
-    菜单组件响应工具
+     菜单组件响应工具
      """
+     # 菜单组件响应以1开头
      @staticmethod
      def success(data):
         result = {
@@ -41,6 +42,7 @@ class BooksResponse():
     """
     书籍组件响应工具
     """
+    # 书籍组件响应以2开头
     @staticmethod
     def success(data):
         result = {
@@ -72,4 +74,46 @@ class BooksResponse():
         return HttpResponse(
             json.dumps(result),
             content_type = "application/json"
+        )
+
+class WantsResponse():
+    """
+    书籍收藏组件响应工具
+    """
+    # 书籍收藏组件响应以3开头
+    @staticmethod
+    def success(data):
+        result = {
+            "status": 3000,
+            "data": data
+        }
+        # return HttpResponse(
+        #     json.dumps(result),
+        #     content_type = "application/json"
+        # )
+        return JsonResponse(
+            result,
+            safe = False
+        )
+
+    @staticmethod
+    def failed(data):
+        result = {
+            "status": 3001,
+            "data": data
+        }
+        return JsonResponse(
+            result,
+            safe = False
+        )
+
+    @staticmethod
+    def other(data):
+        result = {
+            "status": 3002,
+            "data": data
+        }
+        return JsonResponse(
+            result,
+            safe = False
         )
