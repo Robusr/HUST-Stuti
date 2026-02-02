@@ -14,7 +14,7 @@ class Books(models.Model):
         null=True,
         blank=True
     )
-    name = models.CharField(
+    title = models.CharField(
         max_length=255,
         null=True,
         blank=True
@@ -128,7 +128,6 @@ class DecimalEncoder(json.JSONEncoder):
     def default(self, o):
         if isinstance(o, decimal.Decimal):
             return float(o)
-
 
 
 
