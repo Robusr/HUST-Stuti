@@ -168,5 +168,11 @@ CORS_ALLOWS_HEADERS = (
     "* "
 )
 
-"""书籍图片静态文件服务器配置"""
+# 书籍图片静态文件服务器配置
 IMAGE_URL="http://localhost:8000/static/product_images/"
+
+# 全局token验证配置
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES":['utils.jwt_auth.JwtQueryParamAuthentication'],
+}
+

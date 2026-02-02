@@ -2,6 +2,7 @@
 Robusr 2026.2.2
 用户评论视图组件
 """
+from django.http import JsonResponse
 from django.shortcuts import render
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import (
@@ -33,6 +34,8 @@ class CommentGenericAPIView(
     serializer_class = CommentSerializer
 
     def single(self, request, pk):
+        if not request.user.get("status"):
+            return JsonResponse(request.user, safe=False)
         print("SINGLE")
         return self.retrieve(request, pk)
 
