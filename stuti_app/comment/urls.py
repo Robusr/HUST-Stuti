@@ -8,8 +8,11 @@ from .views import CommentGenericAPIView
 urlpatterns = [
     path('', CommentGenericAPIView.as_view({
         'get': 'comment_list',
+        "post": "comment_save",
     })),
     re_path("(?P<pk>.*)/", CommentGenericAPIView.as_view({
         'get': 'single',
+        "post": "comment_edit",
+        "delete": "comment_delete",
     })),
 ]

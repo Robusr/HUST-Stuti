@@ -4,11 +4,13 @@ Robusr 2026.2.1
 """
 from django.http import JsonResponse
 from django.shortcuts import render
+from rest_framework.generics import GenericAPIView
 from rest_framework.views import APIView
 
 from stuti_app.user.models import User
 from stuti_app.user.serializers import UserSerializer
 from utils import ResponseMessage
+from utils.jwt_auth import create_token
 from utils.password_encode import get_md5
 
 
@@ -50,3 +52,33 @@ class UserAPIView(APIView):
         except Exception as e:
             print(e)
             return ResponseMessage.UserResponse.failed("FAILED!")
+
+class LoginView(GenericAPIView):
+    """用户登录视图方法"""
+    def post(self, request):
+        return_data = {}
+        request_data = request.data
+        username = request.data.get('username')
+        user_data = User.objects.get(username=username)
+        if not user_data:
+            return ResponseMessage.UserResponse.other("FAILED!")
+        else:
+            user_ser = UserSerializer(
+                instance=user_data,
+                many=False
+            )
+            # 用户输入密码
+            user_password = request_data.get('password')
+            md5_password = user_ser.data.get(user_password)
+            # 数据库的密码
+            db_user_password = user_ser.data.get('password')
+            if md5_password != db_user_password:
+                return ResponseMessage.UserResponse.other("FAILED!")
+            else:
+                token_info = {
+                    'username': username,
+                }
+                token_data = create_token(token_info)
+                return_data['token'] = token_data
+                return_data['username'] = user_ser.data.get("name")
+                return ResponseMessage.UserResponse.success(return_data)

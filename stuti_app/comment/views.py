@@ -40,13 +40,14 @@ class CommentGenericAPIView(
         print("LIST")
         return self.list(request)
 
-    def commet_edit(self, request, pk):
+    def comment_edit(self, request, pk):
         print("UPDATE")
         return self.update(request, pk)
 
-    def comment_save(self, request, pk):
+    def comment_save(self, request, pk=None):
         print("SAVE")
-        return self.create(request, pk)
+        # create不需要pk参数
+        return self.create(request)
 
     def comment_delete(self, request, pk):
         print("DELETE")
