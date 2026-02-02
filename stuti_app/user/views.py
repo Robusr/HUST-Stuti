@@ -79,10 +79,10 @@ class LoginView(GenericAPIView):
             # 用户输入密码
             user_password = request_data.get('password')
             md5_user_password = get_md5(user_password)
-            print(md5_user_password)
+            # print(md5_user_password)
             # 数据库的密码
             db_user_password = user_ser.data.get('password')
-            print(db_user_password)
+            # print(db_user_password)
 
             if md5_user_password != db_user_password:
                 return ResponseMessage.UserResponse.other("FAILED!")
@@ -92,5 +92,5 @@ class LoginView(GenericAPIView):
                 }
                 token_data = create_token(token_info)
                 return_data['token'] = token_data
-                return_data['username'] = user_ser.data.get("name")
+                return_data['name'] = user_ser.data.get("name")
                 return ResponseMessage.UserResponse.success(return_data)
