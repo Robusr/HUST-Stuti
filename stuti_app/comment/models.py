@@ -38,4 +38,3 @@ class Comment(models.Model):
     class Meta:
         managed = False,
         db_table = 'comment'
-

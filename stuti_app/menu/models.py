@@ -31,7 +31,7 @@ class MainMenu(models.Model):
 
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'main_menu'
 
 class SubMenu(models.Model):
@@ -72,5 +72,5 @@ class SubMenu(models.Model):
 
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'sub_menu'

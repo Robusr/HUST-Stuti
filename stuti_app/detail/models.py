@@ -21,10 +21,10 @@ class UserDetail(models.Model):
         blank=True,
         null=True
     )
-    # create_time = models.DateTimeField(
-    #     blank=True,
-    #     null=True
-    # )
+    create_time = models.DateTimeField(
+        blank=True,
+        null=True
+    )
 
     class Meta:
         managed = False

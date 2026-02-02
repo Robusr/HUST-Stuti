@@ -21,10 +21,10 @@ class PendingBooks(models.Model):
         blank=True,
         null=True
     )
-    # create_time = models.DateTimeField(
-    #     blank=True,
-    #     null=True
-    # )
+    create_time = models.DateTimeField(
+        blank=True,
+        null=True
+    )
     is_delete = models.PositiveIntegerField(
         blank=True,
         null=True
