@@ -14,6 +14,8 @@ from stuti_app.books.serializers import BooksSerializer
 
 class BooksCategoryAPIView(APIView):
     """基于APIView的书籍类别视图方法"""
+    # @todo 重构books组件view.BooksCategoryAPIView组件APIView继承类至GenericAPIView继承类
+
     def get(self, request, category_id, page):
         current_page = (page - 1) * 20
         end_data = page * 20
@@ -29,6 +31,8 @@ class BooksCategoryAPIView(APIView):
 
 class BooksDetailAPIView(APIView):
     """基于APIView的书籍详情视图方法"""
+    # @todo 重构books组件view.BooksDetailAPIView组件APIView继承类至GenericAPIView继承类
+
     def get(self, request, sku_id):
         # print(sku_id)
         books_data = Books.objects.filter(

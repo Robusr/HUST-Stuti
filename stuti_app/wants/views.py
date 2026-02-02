@@ -13,7 +13,8 @@ from utils import ResponseMessage
 
 class WantsAPIView(APIView):
     """ 基于APIView的收藏图书视图组件"""
-     # @todo 后续补充登录权限验证
+    # @todo 后续补充登录权限验证
+    # @todo 重构wants组件view.WantsAPIView组件APIView继承类至GenericAPIView继承类
 
     def post(self, request):
         request_data = request.data

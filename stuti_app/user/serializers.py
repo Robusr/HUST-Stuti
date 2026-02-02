@@ -22,7 +22,7 @@ class UserSerializer(serializers.ModelSerializer):
         validators=[UniqueValidator(queryset=User.objects.all(), message="EXIST!"),]
     )
     # 限制密码可读性
-    password = serializers.CharField(write_only=True)
+    # password = serializers.CharField(write_only=True)
 
     birthday = serializers.DateTimeField("%Y-%m-%d %H:%M:%S")
     create_date = serializers.DateTimeField(

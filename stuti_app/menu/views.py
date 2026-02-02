@@ -13,6 +13,8 @@ import utils.ResponseMessage as ResponseMessage
 
 class BooksMainMenuView(View):
     """书籍总目录视图类"""
+    # @todo 重构menu组件view.BooksMainMenuView组件View继承类至GenericAPIView继承类
+
     def get(self, request):
         print("WantsMainView GET请求")
         main_menu = MainMenu.objects.all()
@@ -50,6 +52,8 @@ class BooksMainMenuView(View):
 
 class BooksSubMenuView(View):
     """书籍二级目录视图类"""
+    # @todo 重构menu组件view.BooksSubMenuView组件View继承类至GenericAPIView继承类
+
     def get(self, request):
         #获取请求的参数
         param_id = request.GET.get('main_menu_id')

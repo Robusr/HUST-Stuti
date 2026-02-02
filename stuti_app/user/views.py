@@ -15,7 +15,10 @@ from utils.password_encode import get_md5
 
 
 class UserAPIView(APIView):
+
     """基于APIView的用户视图方法"""
+    # @todo 重构user组件view.UserAPIView方法APIView继承类至GenericAPIView继承类
+
     # # 实现注册功能
     # def post(self, request):
     #     # 密码加密
@@ -55,11 +58,17 @@ class UserAPIView(APIView):
 
 class LoginView(GenericAPIView):
     """用户登录视图方法"""
+    # @todo 重构user组件view.LoginView组件APIView继承类至GenericAPIView继承类
+    # GenericAPIView继承类需指定序列化器serializer_class
+    serializer_class = UserSerializer
     def post(self, request):
+        # # 显式指定仅支持POST和OPTIONS（OPTIONS是跨域预检请求，需保留）
+        # http_method_names = ['post', 'options']
         return_data = {}
         request_data = request.data
         username = request.data.get('username')
         user_data = User.objects.get(username=username)
+
         if not user_data:
             return ResponseMessage.UserResponse.other("FAILED!")
         else:
@@ -69,10 +78,13 @@ class LoginView(GenericAPIView):
             )
             # 用户输入密码
             user_password = request_data.get('password')
-            md5_password = user_ser.data.get(user_password)
+            md5_user_password = get_md5(user_password)
+            print(md5_user_password)
             # 数据库的密码
             db_user_password = user_ser.data.get('password')
-            if md5_password != db_user_password:
+            print(db_user_password)
+
+            if md5_user_password != db_user_password:
                 return ResponseMessage.UserResponse.other("FAILED!")
             else:
                 token_info = {
