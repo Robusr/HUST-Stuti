@@ -37,5 +37,6 @@ urlpatterns = [
     path("wants/",include("stuti_app.wants.urls")),
     path("user/",include("stuti_app.user.urls")),
     path("trade/", include('stuti_app.trade.urls')),
-    path("userdetail/",include("stuti_app.detail.urls"))
+    path("userdetail/",include("stuti_app.detail.urls")),
+    path("comment/",include("stuti_app.comment.urls"))
 ]
