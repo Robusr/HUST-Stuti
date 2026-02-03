@@ -1,6 +1,8 @@
 <template>
   <van-nav-bar title="HUST Stuti" />
-  <van-search placeholder="请输入搜索关键词" />
+  <van-grid :gutter="10">
+    <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="文字" />
+  </van-grid>
   <van-tabbar>
     <van-tabbar-item icon="home-o">首页</van-tabbar-item>
     <van-tabbar-item icon="search">书籍</van-tabbar-item>
@@ -10,8 +12,5 @@
 </template>
 
 <script setup>
-  import {getMainMenu} from "@/network/home.js";
-  getMainMenu().then(res=>{
-    console.log(res)
-  })
+
 </script>

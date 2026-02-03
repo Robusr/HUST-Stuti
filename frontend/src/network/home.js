@@ -4,6 +4,6 @@ import {request} from "./requestConfig.js"
 
 export function getMainMenu(){
   return request({
-    url:"/main_menu ",
+    url:"main_menu/ ",
   })
 }
