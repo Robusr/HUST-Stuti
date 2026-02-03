@@ -10,6 +10,30 @@ const routes = [
       title:"HUST Stuti"
     }
   },
+    {
+    path:'/books',
+    name:'books',
+    component:HomeView,
+    meta:{
+      title:"HUST Stuti"
+    }
+  },
+    {
+    path:'/trade',
+    name:'trade',
+    component:HomeView,
+    meta:{
+      title:"HUST Stuti"
+    }
+  },
+    {
+    path:'/profile',
+    name:'profile',
+    component:HomeView,
+    meta:{
+      title:"HUST Stuti"
+    }
+  },
 ]
 
 // Vue3新特性，替换process.env.BASE_URL为import.meta.env.BASE_URL
