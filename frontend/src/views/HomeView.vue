@@ -1,11 +1,18 @@
-<script setup>
-
-</script>
-
+<!--Robusr 2026.2.3-->
+<!--主页视图-->
 <template>
-
+    <div>
+      <NavBar></NavBar>
+      <Tabbar></Tabbar>
+    </div>
 </template>
 
-<style scoped>
+<script setup>
+
+import Tabbar from "@/components/common/Tabbar.vue";
+import NavBar from "@/components/common/NavBar.vue";
+</script>
+
+<style>
 
 </style>

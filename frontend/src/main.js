@@ -15,7 +15,7 @@ const app = createApp(App)
 app.use(Vant)
 
 // 挂载Vant
-app.mount('#app')
+// app.mount('#app')
 
 import App from './App.vue'
 import router from './router'
@@ -25,4 +25,4 @@ import router from './router'
 app.use(createPinia())
 app.use(router)
 
-// app.mount('#app')
+app.mount('#app')
