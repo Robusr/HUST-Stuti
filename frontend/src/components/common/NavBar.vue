@@ -9,6 +9,7 @@
 </template>
 
 <script>
+//van-config-provider组件覆盖CSS默认样式
 import { ref, reactive } from 'vue';
 export default {
   setup() {
