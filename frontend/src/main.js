@@ -10,7 +10,7 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 
 // 引入自定义样式表
-import './assets/theme.css'
+// import './assets/theme.less'
 
 // 创建Vue实例并注册Vant
 const app = createApp(App)

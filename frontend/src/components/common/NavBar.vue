@@ -2,7 +2,7 @@
 <!--导航栏公共组件封装-->
 <template>
 <!--  <van-config-provider :theme-vars="themeVars">-->
-  <van-config-provider :theme-vars="themeVars">
+  <van-config-provider>
     <div>
       <van-nav-bar title="HUST Stuti" />
     </div>
