@@ -12,6 +12,7 @@
 <script setup>
 import Tabbar from "@/components/common/Tabbar.vue";
 import NavBar from "@/components/common/NavBar.vue";
+
 </script>
 
 <style>

@@ -1,0 +1,10 @@
+/*导航栏自定义样式*/
+.van-nav-bar{
+  --van-nav-bar-background: #09316a;
+  --van-nav-bar-title-text-color: #FFFFFF;
+}
+
+/*标签栏自定义样式*/
+.van-tabbar{
+  --van-tabbar-background: #FFE2C8;
+}

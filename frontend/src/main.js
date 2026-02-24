@@ -1,7 +1,6 @@
 // Robusr 2026.2.3
 // 前端全局配置
 
-// import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
@@ -9,6 +8,9 @@ import { createPinia } from 'pinia'
 // 全局引入Vant组件库和全部样式
 import Vant from 'vant'
 import 'vant/lib/index.css'
+
+// 引入自定义样式表
+import './assets/theme.css'
 
 // 创建Vue实例并注册Vant
 const app = createApp(App)
