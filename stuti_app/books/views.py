@@ -4,7 +4,7 @@ Robusr 2026.2.1
 """
 from django.contrib.admin.templatetags.admin_list import result_list
 from django.http import JsonResponse
-#访问方式https://localhost:8000/books/category/1
+# 访问方式https://localhost:8000/books/category/1
 from django.shortcuts import render
 from rest_framework.views import APIView
 import utils.ResponseMessage as ResponseMessage
@@ -14,6 +14,7 @@ from stuti_app.books.serializers import BooksSerializer
 
 class BooksCategoryAPIView(APIView):
     """基于APIView的书籍类别视图方法"""
+
     # @todo 重构books组件view.BooksCategoryAPIView组件APIView继承类至GenericAPIView继承类
 
     def get(self, request, category_id, page):
@@ -29,8 +30,10 @@ class BooksCategoryAPIView(APIView):
 
         return ResponseMessage.BooksResponse.success(result_list)
 
+
 class BooksDetailAPIView(APIView):
     """基于APIView的书籍详情视图方法"""
+
     # @todo 重构books组件view.BooksDetailAPIView组件APIView继承类至GenericAPIView继承类
 
     def get(self, request, sku_id):
@@ -39,10 +42,9 @@ class BooksDetailAPIView(APIView):
             sku_id=sku_id
         ).first()
 
-        #序列化操作
-        #序列化参数为instance
-        #反序列化的参数为data
+        # 序列化操作
+        # 序列化参数为instance
+        # 反序列化的参数为data
         result = BooksSerializer(instance=books_data)
 
         return ResponseMessage.BooksResponse.success(result.data)
-

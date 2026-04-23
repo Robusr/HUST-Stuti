@@ -29,14 +29,14 @@ class Books(models.Model):
         null=True,
         blank=True
     )
-    #原价
+    # 原价
     origin_price = models.DecimalField(
         max_digits=10,
         decimal_places=2,
         null=True,
         blank=True
     )
-    #现价
+    # 现价
     current_price = models.DecimalField(
         max_digits=10,
         decimal_places=2,
@@ -57,14 +57,14 @@ class Books(models.Model):
         blank=True,
         null=True,
     )
-    #标准化单元产品ID（Standard Product Unit）
-    #该二手数据标准化产品的唯一标识
+    # 标准化单元产品ID（Standard Product Unit）
+    # 该二手数据标准化产品的唯一标识
     spu_id = models.CharField(
         max_length=255,
         blank=True,
         null=True,
     )
-    #图书二手市场价
+    # 图书二手市场价
     market_price = models.DecimalField(
         max_digits=10,
         decimal_places=2,
@@ -103,7 +103,7 @@ class Books(models.Model):
             'target_url': self.target_url,
             'origin_price': self.origin_price,
             'current_price': self.current_price,
-            #书籍图片静态服务器URL拼接
+            # 书籍图片静态服务器URL拼接
             'image': IMAGE_URL + self.image,
             'seller_name': self.seller_name,
             'seller_id': self.seller_id,
@@ -123,11 +123,10 @@ class Books(models.Model):
         managed = False
         db_table = 'books'
 
+
 class DecimalEncoder(json.JSONEncoder):
     """数据库浮点数据类型格式转换"""
+
     def default(self, o):
         if isinstance(o, decimal.Decimal):
             return float(o)
-
-
-
