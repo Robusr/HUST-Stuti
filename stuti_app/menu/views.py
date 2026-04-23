@@ -13,17 +13,18 @@ import utils.ResponseMessage as ResponseMessage
 
 class BooksMainMenuView(View):
     """书籍总目录视图类"""
+
     # @todo 重构menu组件view.BooksMainMenuView组件View继承类至GenericAPIView继承类
 
     def get(self, request):
         print("WantsMainView GET请求")
         main_menu = MainMenu.objects.all()
-        #处理序列化数据
+        # 处理序列化数据
         result_list = []
         result_json = {}
         for main_menu_item in main_menu:
-             # result_list.append(main_menu_item)
-             result_list.append(main_menu_item.__str__())
+            # result_list.append(main_menu_item)
+            result_list.append(main_menu_item.__str__())
         result_json['status'] = 1000
         result_json['data'] = result_list
         return HttpResponse(json.dumps(result_json), content_type="application/json")
@@ -52,10 +53,11 @@ class BooksMainMenuView(View):
 
 class BooksSubMenuView(View):
     """书籍二级目录视图类"""
+
     # @todo 重构menu组件view.BooksSubMenuView组件View继承类至GenericAPIView继承类
 
     def get(self, request):
-        #获取请求的参数
+        # 获取请求的参数
         param_id = request.GET.get('main_menu_id')
         sub_menu = SubMenu.objects.filter(main_menu_id=param_id)
         result_list = []
@@ -67,6 +69,3 @@ class BooksSubMenuView(View):
             result_json['data'] = result_list
         return ResponseMessage.MenuResponse.success(result_list)
         # return HttpResponse(json.dumps(result_json), content_type="application/json")
-
-
-

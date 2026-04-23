@@ -25,8 +25,7 @@ class UserDetailGeneticAPIView(
     CreateModelMixin,
     RetrieveModelMixin,
     UpdateModelMixin,
-    DestroyModelMixin,):
-
+    DestroyModelMixin, ):
     queryset = UserDetail.objects
     serializer_class = UserDetailSerializer
 
@@ -36,7 +35,7 @@ class UserDetailGeneticAPIView(
     def post(self, request):
         return self.create(request)
 
-    #lookup_field = "district_id"
+    # lookup_field = "district_id"
     def get(self, request, pk):
         return self.retrieve(request, pk)
 
@@ -46,10 +45,10 @@ class UserDetailGeneticAPIView(
     def delete(self, request, pk):
         return self.destroy(request, pk)
 
+
 class UserDetailListGeneticAPIView(
     GenericAPIView,
     ListModelMixin):
-
     queryset = UserDetail.objects
     serializer_class = UserDetailSerializer
 
@@ -65,5 +64,3 @@ class UserDetailListGeneticAPIView(
             return JsonResponse(request.user, safe=False)
         # 获取多个数据
         return self.list(request)
-
-

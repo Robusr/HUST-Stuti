@@ -20,7 +20,7 @@ class MainMenu(models.Model):
         null=True,
     )
 
-    #自定义序列化
+    # 自定义序列化
     def __str__(self):
         result_list = {
             "main_menu_id": self.main_menu_id,
@@ -29,10 +29,10 @@ class MainMenu(models.Model):
         }
         return json.dumps(result_list, ensure_ascii=False)
 
-
     class Meta:
         managed = False
         db_table = 'main_menu'
+
 
 class SubMenu(models.Model):
     """书籍类别二级菜单"""
@@ -60,7 +60,7 @@ class SubMenu(models.Model):
         null=True
     )
 
-    #自定义序列化
+    # 自定义序列化
     def __str__(self):
         result_list = {
             "main_menu_id": self.main_menu_id,
@@ -69,7 +69,6 @@ class SubMenu(models.Model):
             "sub_menu_url": self.sub_menu_url
         }
         return json.dumps(result_list, ensure_ascii=False)
-
 
     class Meta:
         managed = False

@@ -5,6 +5,8 @@ Robusr 2026.2.2
 from rest_framework import serializers
 
 from stuti_app.detail.models import UserDetail
+
+
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserDetail
