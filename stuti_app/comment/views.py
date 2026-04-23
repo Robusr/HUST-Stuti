@@ -29,7 +29,6 @@ class CommentGenericAPIView(
     UpdateModelMixin,
     DestroyModelMixin,
 ):
-
     queryset = Comment.objects
     serializer_class = CommentSerializer
 
@@ -55,4 +54,3 @@ class CommentGenericAPIView(
     def comment_delete(self, request, pk):
         print("DELETE")
         return self.destroy(request, pk)
-

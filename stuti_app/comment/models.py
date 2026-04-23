@@ -4,6 +4,7 @@ Robusr 2026.2.2
 """
 from django.db import models
 
+
 class Comment(models.Model):
     username = models.CharField(
         max_length=255,
