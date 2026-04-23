@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-ofe69eu75@eqy0!!#f50&zx%tc31r^tg+z+uo=d7u!k=@sb$bq
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -40,10 +38,10 @@ INSTALLED_APPS = [
     # 正确的stuti_app应用配置（单独一行）
     'stuti_app.apps.StutiAppConfig',
     # corsheaders插件（单独一行，注意是纯字符串，不是配置类）
-    'corsheaders',#配置跨域
-    'rest_framework',#DRF组件
+    'corsheaders',  # 配置跨域
+    'rest_framework',  # DRF组件
 
-    #自定义应用组件
+    # 自定义应用组件
     "stuti_app.books",
     "stuti_app.comment",
     "stuti_app.trade",
@@ -54,10 +52,10 @@ INSTALLED_APPS = [
 
 ]
 
-#配置跨域插件
-#允许所有域名跨域
+# 配置跨域插件
+# 允许所有域名跨域
 CORS_ORIGIN_ALLOW_ALL = True
-#允许携带cookie
+# 允许携带cookie
 CorS_ALLOW_CREDENTIALS = True
 
 MIDDLEWARE = [
@@ -68,7 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',#配置跨域请求头
+    'corsheaders.middleware.CorsMiddleware',  # 配置跨域请求头
 ]
 
 ROOT_URLCONF = 'Stuti.urls'
@@ -90,7 +88,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Stuti.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
@@ -132,18 +129,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
 LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE = 'Asia/Shanghai'
-#更换为国内时间
+# 更换为国内时间
 
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
@@ -151,7 +146,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR, 'static')
 ]
 
 CORS_ALLOWS_METHODS = (
@@ -163,16 +158,15 @@ CORS_ALLOWS_METHODS = (
     'PUT',
     'VIEW',
 )
-#允许的请求头，不能用*，要写具体的请求头，不然Vue会跨域失败
+# 允许的请求头，不能用*，要写具体的请求头，不然Vue会跨域失败
 CORS_ALLOWS_HEADERS = (
     "* "
 )
 
 # 书籍图片静态文件服务器配置
-IMAGE_URL="http://localhost:8000/static/product_images/"
+IMAGE_URL = "http://localhost:8000/static/product_images/"
 
 # 全局token验证配置
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES":['utils.jwt_auth.JwtQueryParamAuthentication'],
+    "DEFAULT_AUTHENTICATION_CLASSES": ['utils.jwt_auth.JwtQueryParamAuthentication'],
 }
-
