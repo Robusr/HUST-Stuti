@@ -26,17 +26,18 @@ Robusr 2026.1.29
 from django.contrib import admin
 from django.urls import path, include
 from stuti_app.menu.views import BooksMainMenuView, BooksSubMenuView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('Stuti',include('Stuti.urls'), name='Stuti') #添加总路由
+    # path('Stuti',include('Stuti.urls'), name='Stuti') #添加总路由
 
-    #主菜单请求路由
+    # 主菜单请求路由
     path("main_menu/", BooksMainMenuView.as_view()),
     path("sub_menu/", BooksSubMenuView.as_view()),
-    path("books/",include("stuti_app.books.urls")),
-    path("wants/",include("stuti_app.wants.urls")),
-    path("user/",include("stuti_app.user.urls")),
+    path("books/", include("stuti_app.books.urls")),
+    path("wants/", include("stuti_app.wants.urls")),
+    path("user/", include("stuti_app.user.urls")),
     path("trade/", include('stuti_app.trade.urls')),
-    path("userdetail/",include("stuti_app.detail.urls")),
-    path("comment/",include("stuti_app.comment.urls"))
+    path("userdetail/", include("stuti_app.detail.urls")),
+    path("comment/", include("stuti_app.comment.urls"))
 ]
